@@ -6,7 +6,7 @@ public class RoomServiceShowMenu {
     public void RoomServiceShowMenu() {
         System.out.println("<메뉴>");
 
-        try (FileInputStream fin = new FileInputStream("C:\\Users\\akzmw\\Desktop\\RoomServiceMenu.txt");
+        try (FileInputStream fin = new FileInputStream("");
              InputStreamReader in = new InputStreamReader(fin, "MS949")) {
 
             int c;
