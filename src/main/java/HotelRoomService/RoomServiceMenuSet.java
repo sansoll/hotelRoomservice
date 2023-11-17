@@ -14,7 +14,7 @@ public class RoomServiceMenuSet {
         System.out.println("엔터를 두 번 입력하면 메뉴가 저장됩니다.");
 
         try (Scanner scanner = new Scanner(System.in);
-             FileWriter fout = new FileWriter("C:\\Users\\akzmw\\Desktop\\RoomServiceMenu.txt")) {
+             FileWriter fout = new FileWriter("")) {
 
             while (true) {
                 String line = scanner.nextLine();
