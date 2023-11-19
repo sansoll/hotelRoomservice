@@ -1,11 +1,14 @@
 package HotelRoomService;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class RoomServiceManager {
     public static void main(String args[]) {
-        for (;;) {
-            try (Scanner scanner = new Scanner(System.in)) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            try {
                 // 사용자에게 서비스 메뉴를 표시
                 System.out.println("사용하실 서비스의 번호를 입력하시오.");
                 System.out.println("1. 룸서비스 메뉴 설정하기");
@@ -33,15 +36,14 @@ public class RoomServiceManager {
 
                     // 사용자가 숫자를 입력할 때까지 반복
                     while (true) {
-                        System.out.print("주문하실 메뉴 번호를 입력하세요: ");
-                        // 사용자 입력이 숫자인지 확인
-                        if (scanner.hasNextInt()) {
+                        try {
+                            System.out.print("주문하실 메뉴 번호를 입력하세요: ");
                             orderNumber = scanner.nextInt();
                             break;
-                        } else {
-                            // 숫자가 아닌 값이 입력된 경우
+                        } catch (InputMismatchException e) {
+                            // 입력이 숫자가 아닌 경우 예외 처리
                             System.out.println("숫자를 입력하세요. 다시 시도해주세요.");
-                            scanner.nextLine(); // 버퍼 비우기
+                            scanner.nextLine(); // 입력 버퍼 비우기
                         }
                     }
 
@@ -49,12 +51,19 @@ public class RoomServiceManager {
                     roomOrder.displayMenuInfo(orderNumber);
                 } else if (serviceNumber == 4) {
                     // 프로그램 종료
-                    return;
+                    break;
+                } else {
+                    // 유효하지 않은 서비스 번호인 경우
+                    System.out.println("유효하지 않은 서비스 번호입니다. 다시 시도해주세요.");
                 }
             } catch (Exception e) {
                 // 예외 처리: 입력 오류 메시지 출력
                 System.out.println("입력 오류: " + e.getMessage());
+                scanner.nextLine(); // 입력 버퍼 비우기
             }
         }
+
+        // Scanner 닫기
+        scanner.close();
     }
 }
