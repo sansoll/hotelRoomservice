@@ -20,7 +20,7 @@ public class RoomServiceOrder {
 
     // 파일에서 메뉴 정보를 읽어와 배열에 저장하는 메서드
     private void loadMenuInfo() {
-        try (BufferedReader reader = Files.newBufferedReader(Paths.get("C:\\Temp\\RoomServiceMenu.txt"), StandardCharsets.UTF_8)) {
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get("C:\\Windows\\Temp\\RoomServiceMenu.txt"), StandardCharsets.UTF_8)) {
             String line;
 
             int dataCount = 0;
@@ -40,7 +40,7 @@ public class RoomServiceOrder {
             orderPrice = new int[dataCount];
 
             // 파일을 다시 읽어서 주문 정보를 배열에 저장
-            try (BufferedReader newReader = Files.newBufferedReader(Paths.get("C:\\Users\\akzmw\\Desktop\\RoomServiceMenu.txt"), StandardCharsets.UTF_8)) {
+            try (BufferedReader newReader = Files.newBufferedReader(Paths.get("C:\\Windows\\Temp\\RoomServiceMenu.txt"), StandardCharsets.UTF_8)) {
                 int index = 0;
                 while ((line = newReader.readLine()) != null) {
                     int orderNumber = extractOrderNumber(line);
@@ -59,7 +59,7 @@ public class RoomServiceOrder {
             }
         } catch (IOException e) {
             // 예외 처리: 입출력 오류 메시지 출력
-            System.out.println("입출력 오류: " + e.getMessage());
+            System.out.println("ServiceOrder입출력 오류: " + e.getMessage());
         }
     }
 
@@ -69,10 +69,12 @@ public class RoomServiceOrder {
             if (userNumber == orderNum[i]) {
                 priceSum = priceSum + orderPrice[i];
                 System.out.println(orderName[i] + " 주문이 완료되었습니다.");
+                System.out.println("");
                 return;
             }
         }
         System.out.println("일치하는 메뉴가 없습니다.");
+        System.out.println("");
     }
 
     // 각 줄의 가장 첫 번째에 오는 숫자를 추출하는 메서드
