@@ -20,7 +20,7 @@ public class RoomServiceOrder {
 
     // 파일에서 메뉴 정보를 읽어와 배열에 저장하는 메서드
     private void loadMenuInfo() {
-        try (BufferedReader reader = Files.newBufferedReader(Paths.get("C:\\Users\\akzmw\\Desktop\\RoomServiceMenu.txt"), StandardCharsets.UTF_8)) {
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get("C:\\Temp\\RoomServiceMenu.txt"), StandardCharsets.UTF_8)) {
             String line;
 
             int dataCount = 0;
