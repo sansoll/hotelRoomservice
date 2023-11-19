@@ -13,6 +13,7 @@ public class RoomServiceManager {
                     // 사용자에게 서비스 메뉴를 표시
                     System.out.println("사용하실 서비스의 번호를 입력하시오.");
                     System.out.println("1. 룸서비스 메뉴 설정하기");
+                    System.out.println("    - 설정을 선택하면 기존의 메뉴 설정은 초기화 됩니다.");
                     System.out.println("2. 룸서비스 메뉴 보이기");
                     System.out.println("3. 고객님이 주문한 룸서비스 메뉴 입력하기");
                     System.out.println("4. 돌아가기");
