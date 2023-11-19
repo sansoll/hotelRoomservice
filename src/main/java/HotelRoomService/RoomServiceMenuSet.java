@@ -2,9 +2,6 @@ package HotelRoomService;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Paths;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.util.Scanner;
 
 public class RoomServiceMenuSet {
@@ -13,13 +10,15 @@ public class RoomServiceMenuSet {
         System.out.println("메뉴를 입력해주세요.");
         System.out.println("[메뉴번호 메뉴명(영어) 가격] 형식으로 입력해주세요. 아래에 나오는 문장은 예시입니다.");
         System.out.println("1 Pasta 22000");
+        System.out.println("2 Fried_Chicken 22000");
         System.out.println("엔터를 두 번 입력하면 메뉴가 저장됩니다.");
 
-        try (Scanner scanner = new Scanner(System.in);
-             FileWriter fout = new FileWriter("C:\\Temp\\RoomServiceMenu.txt")) {
+        try (//Scanner scanner = new Scanner(System.in);
+             FileWriter fout = new FileWriter("C:\\Windows\\Temp\\RoomServiceMenu.txt")) {
 
             // 사용자로부터 메뉴 정보 입력받기
             while (true) {
+                Scanner scanner = new Scanner(System.in);
                 String line = scanner.nextLine();
 
                 // 엔터를 두 번 입력하면 입력 종료
@@ -32,6 +31,7 @@ public class RoomServiceMenuSet {
                     System.out.println("");
                     System.out.println("[메뉴번호 메뉴명(영어) 가격] 형식으로 입력해주세요. 아래에 나오는 문장은 예시입니다.");
                     System.out.println("1 Pasta 22000");
+                    System.out.println("2 Fried_Chicken 22000");
                     System.out.println("");
                     continue;
                 }
@@ -43,7 +43,7 @@ public class RoomServiceMenuSet {
             System.out.println("");
         } catch (IOException e) {
             // 예외 처리: 입출력 오류 메시지 출력
-            System.out.println("입출력 오류: " + e.getMessage());
+            System.out.println("MenuSet입출력 오류: " + e.getMessage());
         }
     }
 
