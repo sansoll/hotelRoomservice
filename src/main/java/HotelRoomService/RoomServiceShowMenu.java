@@ -11,7 +11,7 @@ public class RoomServiceShowMenu {
         // 메뉴를 파일에서 읽어와서 화면에 표시하는 서비스 시작
         System.out.println("<메뉴>");
 
-        try (BufferedReader reader = Files.newBufferedReader(Paths.get("C:\\Temp\\RoomServiceMenu.txt"), StandardCharsets.UTF_8)) {
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get("C:\\Windows\\Temp\\RoomServiceMenu.txt"), StandardCharsets.UTF_8)) {
             String line;
 
             // 파일에서 한 줄씩 읽어오면서 출력
@@ -20,7 +20,7 @@ public class RoomServiceShowMenu {
             }
         } catch (IOException e) {
             // 예외 처리: 입출력 오류 메시지 출력
-            System.out.println("입출력 오류: " + e.getMessage());
+            System.out.println("ShowMenu입출력 오류: " + e.getMessage());
         }
 
         System.out.println("");
