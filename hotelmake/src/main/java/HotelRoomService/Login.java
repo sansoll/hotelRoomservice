@@ -3,7 +3,7 @@ package HotelRoomService;
 import java.util.Scanner;
 
 public class Login {
-    public static void main(String[] args) {
+    void loginpage() {
         ManagerLogin manager = new ManagerLogin();
         CsrLogin csr = new CsrLogin();
         Scanner scanner = new Scanner(System.in);
