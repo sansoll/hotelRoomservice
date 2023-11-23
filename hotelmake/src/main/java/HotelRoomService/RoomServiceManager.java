@@ -36,11 +36,15 @@ public class RoomServiceManager {
                         // 주문 입력 서비스 호출
                         RoomServiceOrder roomOrder = new RoomServiceOrder();
                         int orderNumber;
+                        int roomNumber;
 
                         // 사용자가 숫자를 입력할 때까지 반복
                         while (true) {
                             try {
-                                System.out.println("주문하실 메뉴 번호를 입력하세요.");
+                                System.out.println("주문하신 방 번호를 입력하세요.");
+                                System.out.print(">>> ");
+                                roomNumber = scanner.nextInt();
+                                System.out.println("주문하신 메뉴 번호를 입력하세요.");
                                 System.out.print(">>> ");
                                 orderNumber = scanner.nextInt();
                                 break;
