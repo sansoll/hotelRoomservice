@@ -14,11 +14,11 @@ public class RoomServiceMenuSet {
         System.out.println("엔터를 두 번 입력하면 메뉴가 저장됩니다.");
 
         try (//Scanner scanner = new Scanner(System.in);
-             FileWriter fout = new FileWriter("C:\\Windows\\Temp\\RoomServiceMenu.txt")) {
+            FileWriter fout = new FileWriter("C:\\Windows\\Temp\\RoomServiceMenu.txt")) {
+            Scanner scanner = new Scanner(System.in);
 
             // 사용자로부터 메뉴 정보 입력받기
             while (true) {
-                Scanner scanner = new Scanner(System.in);
                 String line = scanner.nextLine();
 
                 // 엔터를 두 번 입력하면 입력 종료
